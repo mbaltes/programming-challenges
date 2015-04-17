@@ -1,14 +1,15 @@
 /* 
     Problem: https://www.hackerrank.com/challenges/find-digits
     Status: Working.
-    Todo: Add constraints on inputs. Refine. Seek more efficient approach. 
+    Todo: Refine. Try the modulus approach.
 
 */
 
-//#include <cmath>
+#include <cmath>
 //#include <cstdio>
 #include <vector>
 #include <iostream>
+#include <assert.h>
 //#include <algorithm>
 using namespace std;
 
@@ -23,8 +24,10 @@ int main()
 
     /* Get inputs, and store in vector. */
     cin >> number_of_cases;
+    assert(number_of_cases > 0 and number_of_cases < 16);
     for (int i = 0; i < number_of_cases; i++) {
         cin >> temp;
+        assert(stoi(temp) >= 0 and stoi(temp) < pow(10, 10));
         case_vector.push_back(temp);
     }
 
