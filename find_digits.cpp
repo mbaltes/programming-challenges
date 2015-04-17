@@ -16,9 +16,7 @@ int main()
 {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
 
-    int number_of_cases; 
-    int counter = 0;
-    int zero_count = 0;
+    int number_of_cases{0}, counter{0}, zero_count{0};
     string temp;
     char temp_char;
     vector<string> case_vector;
