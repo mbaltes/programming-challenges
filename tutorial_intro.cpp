@@ -1,3 +1,10 @@
+/* 
+    Problem: https://www.hackerrank.com/challenges/tutorial-intro
+    Status: Working.
+    Todo: 
+
+*/
+
 #include <vector>
 #include <iostream>
 using namespace std;
