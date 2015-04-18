@@ -1,7 +1,7 @@
 /* 
     Problem: https://www.hackerrank.com/challenges/find-digits
     Status: Working.
-    Todo: Refine. Try the modulus approach.
+    Todo: Refine.
 
 */
 
