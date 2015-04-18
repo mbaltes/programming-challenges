@@ -10,6 +10,11 @@
 #include <vector>
 using namespace std;
 
+/**
+    Prints 1 if number is a smith number, prints 0 otherwise.
+    @param n Number to check.
+    @param factors A vector of the prime factors of n.
+*/
 void smith_numbers(int n, const vector<int> & factors) 
 {
     int factors_sum{0}, digits_sum{0};
@@ -39,8 +44,13 @@ void smith_numbers(int n, const vector<int> & factors)
     } else {
         cout << 0 << "\n";
     }
-}
+} 
 
+/**
+    Gets the prime factors of an integer.
+    @param n Number to work on.
+    @return A vector containing the prime factors of n in acsending order.
+*/
 vector<int> prime_factors(int n) 
 {
     vector<int> factors;
@@ -60,6 +70,11 @@ vector<int> prime_factors(int n)
     return factors;
 }
 
+/**
+    Checks if an integer is prime.
+    @param n The number to check.
+    @return true if n is prime, false otherwise.
+*/
 bool is_prime(int n)
 {
     for (int i = 2; i < n; i++) {
