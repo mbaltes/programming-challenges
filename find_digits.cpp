@@ -5,18 +5,14 @@
 
 */
 
-#include <cmath>
-//#include <cstdio>
+#include <cmath> // for pow()
 #include <vector>
 #include <iostream>
-#include <assert.h>
-//#include <algorithm>
+#include <stdexcept> // for invalid_argument()
 using namespace std;
 
 int main() 
 {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
-
     int number_of_cases{0}, counter{0}, zero_count{0};
     string temp;
     char temp_char;
@@ -24,11 +20,25 @@ int main()
 
     /* Get inputs, and store in vector. */
     cin >> number_of_cases;
-    assert(number_of_cases > 0 and number_of_cases < 16);
-    for (int i = 0; i < number_of_cases; i++) {
-        cin >> temp;
-        assert(stoi(temp) >= 0 and stoi(temp) < pow(10, 10));
-        case_vector.push_back(temp);
+    try {
+        if (number_of_cases < 1 or number_of_cases > 15) {
+            throw invalid_argument("Error: Invalid input.");
+        } else {
+            for (int i = 0; i < number_of_cases; i++) {
+                cin >> temp;
+                try {
+                    if (stoi(temp) < 0 or stoi(temp) > pow(10, 10)) {
+                        throw invalid_argument("Error: Invalid number.");
+                    } else {
+                        case_vector.push_back(temp);
+                    }
+                } catch (const invalid_argument& e) {
+                    cout << e.what() << "\n";
+                }
+            }
+        }
+    } catch (const invalid_argument& e) {
+        cout << e.what() << "\n";
     }
 
     /* Calculations. */
